@@ -19,6 +19,8 @@ A lightweight desktop app for browsing and downloading files from an S3 bucket. 
 ### Install & Run
 
 ```bash
+git clone https://github.com/Chigoziee/s3_browser.git
+cd s3_browser
 npm install
 npm start
 ```

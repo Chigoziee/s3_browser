@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';" />
+  <title>S3 Browser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <div id="header">
+      <h1>S3 Browser</h1>
+      <button class="btn-icon" id="btn-refresh" title="Refresh">&#8635;</button>
+      <button class="btn-secondary" id="btn-settings">Settings</button>
+    </div>
+
+    <!-- Toolbar / Breadcrumb -->
+    <div id="toolbar">
+      <div id="breadcrumb"></div>
+      <input type="search" id="search-box" placeholder="Filter files…" />
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+      <!-- No credentials state -->
+      <div id="no-creds" style="display:none;">
+        <p>No AWS credentials configured.</p>
+        <button class="btn-primary" id="btn-open-settings-creds">Open Settings</button>
+      </div>
+
+      <!-- Loading state -->
+      <div id="loading" style="display:none;">
+        <div class="spinner"></div>
+        <span>Loading…</span>
+      </div>
+
+      <!-- Error state -->
+      <div id="error-state" style="display:none;">
+        <span id="error-msg-text"></span>
+      </div>
+
+      <!-- File list -->
+      <div id="file-list"></div>
+    </div>
+  </div>
+
+  <!-- Progress overlay for folder downloads -->
+  <div id="progress-overlay">
+    <div id="progress-label">Downloading… 0%</div>
+    <div id="progress-bar-track">
+      <div id="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

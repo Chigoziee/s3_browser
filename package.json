@@ -1,0 +1,42 @@
+{
+  "name": "s3-browser",
+  "version": "1.0.0",
+  "description": "S3 File Browser & Downloader Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "node start.js",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "keywords": [],
+  "author": "Bloomstudios",
+  "license": "ISC",
+  "build": {
+    "appId": "ai.bloomstudios.s3browser",
+    "productName": "S3 Browser",
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "settings-window/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1083.0",
+    "@aws-sdk/s3-request-presigner": "^3.1083.0",
+    "archiver": "^8.0.0",
+    "electron": "^43.1.0",
+    "electron-store": "^11.0.2"
+  },
+  "devDependencies": {
+    "electron-builder": "^26.15.3"
+  }
+}
